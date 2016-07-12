@@ -1,0 +1,92 @@
+<body>
+</body>
+<template name="Home">
+    <div class="page">
+        <header class="bar bar-nav">
+            <a href="#" class="open-panel icon icon-menu pull-left" data-panel='#panel-left-demo'></a>
+            <h1 class='title'>待办清单({{incompleteCount}})</h1>
+        </header>
+        <div class="content">
+            {{#if Template.subscriptionsReady}} {{> Template.dynamic template=top}}{{> Template.dynamic template=main}} {{else}} {{> App_loading}} {{/if}}
+        </div>
+    </div>
+    <div class="panel-overlay"></div>
+    <!-- Left Panel with Reveal effect -->
+    <div class="panel panel-left panel-reveal theme-dark" id='panel-left-demo'>
+        <div class="content-block">
+            <!--  <p>
+                <form class="new-task">
+                    <input type="text" name="text" placeholder="Type to add new tasks" />
+                </form>
+            </p> -->
+            <p> {{> loginButtons}}</p>
+            <p><a href="/home/order" class="close-panel">主页</a></p>
+            <p><a href="/home/order" class="close-panel">配送</a></p>
+            <p><a href="/home/collection" class="close-panel">代收</a></p>
+            <p><a href="/add" class="close-panel">下单</a></p>
+            <p><a href="#" class="close-panel">关闭</a></p>
+        </div>
+        <div class="list-block">
+            <!-- .... -->
+        </div>
+    </div>
+    <div class="panel panel-right panel-reveal">
+        <div class="content-block">
+            <p>这是一个侧栏</p>
+            <p><a href="#" class="close-panel">关闭</a></p>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var Zepto = jQuery;
+    </script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+</template>
+<template name="Lists">
+    <div class="buttons-tab">
+        <a href="#tab1" class="tab-link active button">未处理</a>
+        <a href="#tab2" class="tab-link button">正在处理</a>
+        <a href="#tab3" class="tab-link button">完成</a>
+    </div>
+    <div class="content-block">
+        <div class="tabs">
+            <div id="tab1" class="tab active">
+                <div class="content-block">
+                    <div class="list-block">
+                        <ul>
+                            {{#each orders}} {{> order}} {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="tab2" class="tab">
+                <div class="content-block">
+                    <div class="list-block">
+                        <ul>
+                            {{#each orders}} {{> order}} {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="tab3" class="tab">
+                <div class="content-block">
+                    <div class="list-block">
+                        <ul>
+                            {{#each orders}} {{> order}} {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<template name="seach">
+    <div class="bar bar-header-secondary">
+        <div class="searchbar">
+            <a class="searchbar-cancel">取消</a>
+            <div class="search-input">
+                <label class="icon icon-search" for="search"></label>
+                <input type="search" id='search' placeholder='输入关键字...' />
+            </div>
+        </div>
+    </div>
+</template>

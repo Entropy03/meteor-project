@@ -1,0 +1,170 @@
+<template name="addTask">
+    <div class="content">
+        {{> Template.dynamic template=top}} {{> Template.dynamic template=main}} {{> Template.dynamic template=info}}
+    </div>
+     <script type="text/javascript">
+    var Zepto = jQuery;
+    </script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+</template>
+<template name="sendInfo">
+    <div class="card">
+        <div class="card-header">寄件人信息</div>
+        <div class="card-content">
+            <div class="card-content-inner">
+                <div class="list-block">
+                    <ul>
+                        <!-- Text inputs -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">姓名</div>
+                                    <div class="item-input">
+                                        <input type="text" id="sendName" placeholder="姓名">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-email"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">电话</div>
+                                    <div class="item-input">
+                                        <input type="text" id="sendPhone" placeholder="电话">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">地址</div>
+                                    <div class="item-input">
+                                        <input type="text" id="sendAddress" placeholder="地址">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<template name="RecInfo">
+    <div class="card">
+        <div class="card-header">收件人信息</div>
+        <div class="card-content">
+            <div class="card-content-inner">
+                <div class="list-block">
+                    <ul>
+                        <!-- Text inputs -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">姓名</div>
+                                    <div class="item-input">
+                                        <input type="text" id="takeName" placeholder="姓名">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-email"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">电话</div>
+                                    <div class="item-input">
+                                        <input type="text" id="takePhone" placeholder="电话">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">地址</div>
+                                    <div class="item-input">
+                                        <input type="text"  id="takeAddress"  placeholder="地址">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<template name="car">
+    <div class="card">
+        <div class="card-header">保鲜车</div>
+        <div class="card-content">
+            <div class="card-content-inner">头和尾的卡片。卡头是用来显示一些额外的信息，或自定义操作卡标题和页脚。</div>
+        </div>
+    </div>
+</template>
+<template name="itemsInfo">
+    <div class="card">
+        <div class="card-header">快件信息</div>
+        <div class="card-content">
+            <div class="list-block">
+                  <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-comment"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">配送类型</div>
+                       <div class="item-input">
+			              <select id="itemType">
+			                <option value="order">寄件</option>
+			                <option value="collection">其他</option>
+			              </select>
+           				 </div>
+
+                    </div>
+                </div>
+                <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-comment"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">物品类型</div>
+                        <div class="item-input">
+                            <input type="text" id='picker'>
+                        </div>
+
+                    </div>
+                </div>
+                 <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-comment"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">物品数量</div>
+                        <div class="item-input">
+                            <input type="text" id="itemNum">
+                        </div>
+                        
+                    </div>
+                </div>
+
+                 <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-comment"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">详情</div>
+                        <div class="item-input">
+                            <input type="text" id="itemDeil	">
+                        </div>
+                        
+                    </div>
+                </div>
+                       <p></p>
+        <div class="row">
+            <div class="col-50"><a href="/home/order" class="button button-big button-fill button-danger">取消</a></div>
+            <div class="col-50"><a href="#" class="button button-big button-fill button-success">提交</a></div>
+        </div>
+            </div>
+        </div>
+    </div>
+
+</template>

@@ -1,0 +1,32 @@
+<template name="appHome">
+
+    {{#if Template.subscriptionsReady}} {{> Template.dynamic template=top}} {{> Template.dynamic template=main}} {{else}} {{> App_loading}} {{/if}}
+</template>
+<template name="appPages">
+    <div class="card">
+        <div class="card-header">订单信息</div>
+        <div class="card-content">
+            <div class="card-content-inner">
+                {{#with oDetail}}
+                <div class="form-group">
+                    <div>
+                        <label>发件人</label>：<span>{{sendName}}</span>
+                    </div>
+                    <div>
+                        <label>收件人</label>：<span>{{takeName}}</span>
+                    </div>
+                    <div>
+                        <label>发件地址</label> ：<span>{{sendAddress}}</span>
+                    </div>
+                    <div>
+                        <label>收件地址</label>：<span>{{takeAddress}}</span>
+                    </div>
+                    <div>
+                        <label>联系电话</label>：<span>{{sendPhone}}</span>
+                    </div>
+                    </div>
+                {{/with}}
+            </div>
+        </div>
+    </div>
+</template>

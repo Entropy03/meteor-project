@@ -1,0 +1,77 @@
+<!-- 开启指令 -->
+<!-- 处理工作人员接收订单业务 -->
+<template name="end">
+    <div class="card">
+        <div class="card-content">
+            <div class="card-content-inner">
+                <p>
+                    <label>当前进度:</label>
+                </p>
+                <div>
+                    {{#with myList = app_stauts}} {{#each cmd in myList}} {{> endStauts cmd = cmd }} {{/each}} {{/with}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+    <div class="card-header">反馈:</div>
+    <div class="card-content">
+      <div class="card-content-inner">   <div class="list-block">
+                    <ul>
+                        {{#with oDetail}} {{#each des in oDetail.describe}}
+                        <li class="item-content span-bordr">
+                            <div class="item-inner">
+                                     <a href="">@{{des.username}} 选择 <span class="stus-s">{{des.errStatus}} </span>  在 <span class="stus-s">{{des.cmd}}</span> 环节:  {{des.text}}</a>
+                            </div>
+                        </li>
+                        {{/each}} {{/with}}
+                    </ul>
+                </div></div>
+    </div>
+    <div class="card-footer"><a href="">更多</a></div>
+  </div>
+
+    <div class="card">
+        <div class="card-content">
+            <div class="card-content-inner">
+                <div>
+                    {{>endDel}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<template name="endStauts">
+    <div class="div">
+        <div class="line"></div>
+        <div class="right">
+            {{#if checkName (cmd.name)}}
+            <button class=" button button-success">{{cmd.des}}</button>
+            {{else}}
+            <button class=" button  disabled">{{cmd.des}}</button>
+            {{/if}}
+        </div>
+    </div>
+</template>
+<template name="endDel">
+    <div class="list-block">
+        <div class="content-block">
+            <!-- In data-popup attribute we specify CSS selector of popup we need to end -->
+            <p><a href="#" class="create-actions">选择操作</a> <span id="error" key=""></span></p>
+        </div>
+        <div class="item-content">
+            <div class="item-media"><i class="icon icon-form-comment"></i></div>
+            <div class="item-inner">
+                <div class="item-title label">反馈：</div>
+                <div class="item-input">
+                    <textarea  id="describe" style="border-style:groove;" placeholder='输入反馈详情...'></textarea>
+                </div>
+            </div>
+        </div>
+        <p></p>
+        <div class="row">
+            <div class="col-50"><a href="#" class="button button-big button-fill button-danger">取消</a></div>
+            <div class="col-50"><a href="#" class="button button-big button-fill button-success">下一步</a></div>
+        </div>
+    </div>
+</template>
